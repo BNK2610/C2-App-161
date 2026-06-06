@@ -4,14 +4,19 @@ uvicorn[standard]>=0.34.0
 pydantic>=2.10.0
 pydantic-settings>=2.7.0
 python-dotenv>=1.0.0
+python-multipart>=0.0.20
 
 # AI / LangChain
 langchain>=0.3.0
 langchain-openai>=0.3.0
 langgraph>=0.2.0
+openai>=1.55.0
 
-# Database (uncomment as needed)
-# sqlalchemy>=2.0.0
+# Database
+sqlalchemy>=2.0.0
+aiosqlite>=0.20.0
+
+# Database migrations (uncomment when schema stabilizes)
 # alembic>=1.14.0
 # psycopg2-binary>=2.9.0
 

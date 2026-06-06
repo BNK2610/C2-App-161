@@ -3,23 +3,27 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "c2-app-161"
+name = "voiceride"
 version = "0.1.0"
-description = "AI20K Cohort 2 project"
+description = "V-VoiceRide: Vietnamese voice-first ride booking assistant MVP"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
 
 dependencies = [
     "fastapi>=0.115.0,<1.0.0",
     "uvicorn[standard]>=0.30.0,<1.0.0",
+    "python-multipart>=0.0.20,<1.0.0",
 
     "langgraph>=0.2.0,<1.0.0",
     "langchain-core>=0.2.0,<1.0.0",
     "langchain-openai>=0.1.0,<1.0.0",
+    "openai>=1.55.0,<2.0.0",
 
     "pydantic>=2.7.0,<3.0.0",
     "pydantic-settings>=2.3.0,<3.0.0",
     "python-dotenv>=1.0.1,<2.0.0",
+    "sqlalchemy>=2.0.0,<3.0.0",
+    "aiosqlite>=0.20.0,<1.0.0",
 ]
 
 [project.optional-dependencies]

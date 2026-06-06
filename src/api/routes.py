@@ -8,7 +8,7 @@ router = APIRouter()
 
 @router.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest) -> ChatResponse:
-    """Chat với AI agent."""
+    """Chat with the VoiceRide booking assistant."""
     try:
         result = await agent.ainvoke({"query": request.message})
         return ChatResponse(
@@ -16,10 +16,10 @@ async def chat(request: ChatRequest) -> ChatResponse:
             analysis=result.get("analysis", ""),
         )
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @router.get("/status")
 async def agent_status():
-    """Kiểm tra trạng thái agent."""
-    return {"status": "ready", "agent": "LangGraph Agent v1.0"}
+    """Return assistant readiness."""
+    return {"status": "ready", "agent": "V-VoiceRide Assistant v1.0"}
